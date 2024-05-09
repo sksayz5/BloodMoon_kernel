@@ -107,6 +107,11 @@ if [[ $3 ]]; then
     echo "Input changed KERNEL_BRANCH to $3"
 fi
 
+if [[ $4 ]]; then
+    DEVICE_DEFCONFIG=$4
+    echo "Input changed DEVICE_DEFCONFIG to $4"
+fi
+
 msg "KernelSU"
 if [[ $KSU_ENABLED == "true" ]]; then
     curl -LSs "https://raw.githubusercontent.com/$KERNELSU_REPO/main/kernel/setup.sh" | bash -s main
