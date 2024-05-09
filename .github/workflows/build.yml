@@ -22,7 +22,7 @@ on:
       Kernel_Branch:
         required: true
         type: string
-        default: vantom-14
+        default: pixelos-14.0
       os:
         required: true
         type: string
