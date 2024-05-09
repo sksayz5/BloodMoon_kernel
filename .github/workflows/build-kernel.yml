@@ -4,13 +4,13 @@ on:
   workflow_call:
     inputs:
       include_ksu:
-        required: true
+        required: false
         type: string
       kernel_git:
-        required: true
+        required: false
         type: string
       kernel_branch:
-        required: true
+        required: false
         type: string
       os:
         required: false
