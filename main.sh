@@ -5,7 +5,7 @@
 
 # Kernel
 KERNEL_NAME="MilkKernel"
-KERNEL_GIT="https://github.com/SchweGELBin/kernel_milk_davinci.git"
+KERNEL_GIT="https://github.com/silvzr/kernel_milk_davinci_store.git"
 KERNEL_BRANCH="vantom-14"
 
 # KernelSU
@@ -46,7 +46,7 @@ IMAGE="$KERNEL_DIR/out/$DEVICE_ARCH/boot/Image.gz"
 DTB="$KERNEL_DIR/out/$DEVICE_ARCH/boot/dtb.img"
 DTBO="$KERNEL_DIR/out/$DEVICE_ARCH/boot/dtbo.img"
 
-export KBUILD_BUILD_USER=SchweGELBin
+export KBUILD_BUILD_USER=silvzr
 export KBUILD_BUILD_HOST=GitHubCI
 
 # Highlight
