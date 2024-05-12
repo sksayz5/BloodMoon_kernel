@@ -213,6 +213,7 @@ echo "
 - **LLD Version**: $LLD_VERSION
 " > bodyFile.md
 echo "$TITLE" > name.txt
+#echo "$KERNEL_NAME" > name.txt
 
 # Finish
 msg "Done"
