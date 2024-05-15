@@ -4,22 +4,22 @@ on:
   workflow_call:
     inputs:
       include_ksu:
-        required: false
+        required: true
         type: string
       kernel_git:
-        required: false
+        required: true
         type: string
       kernel_branch:
-        required: false
+        required: true
         type: string
       device_defconfig:
-        required: false
+        required: true
         type: string
       common_defconfig:
-        required: false
+        required: true
         type: string
       os:
-        required: false
+        required: true
         type: string
         default: ubuntu-latest
 
