@@ -15,6 +15,8 @@ Please read following **[README](https://github.com/SchweGELBin/kernel_milk_davi
 - Run Action "CI Build"
 - You can choose your build options before you start (These will override the variables in main.sh)
 - The files will be available at "releases" in your repository
+- v1.x.x = PixelOS kernel (Vantom)
+- v2.x.x = SleepyKernel (perf+)
 
 ```
 # Kernel
@@ -34,6 +36,7 @@ ANYKERNEL3_BRANCH | Branch of your AnyKernel3 repo
 # Build
 DEVICE_CODE       | Device codename (Mi 9t / RedmiK20 is "davinci")
 DEVICE_DEFCONFIG  | Defconfig file of your device (Typically [codename]_defconfig e.g. "davinci_defconfig")
+COMMON_DEFCONFIG  | Defconfig file of your common tree device (Not needed if [codename]_defconfig exists)
 DEVICE_ARCH       | Device architecture (arch/arm, arch/arm64, arch/x64)
 
 # Clang
