@@ -184,11 +184,11 @@ cp $DTBO .
 # Archive
 mkdir -p $WORKDIR/out
 if [[ $KSU_ENABLED == "true" ]]; then
-  ZIP_NAME="$KERNEL_NAME-KSU.zip"
+  ZIP_NAME="$KERNEL_NAME-$KERNEL_VERSION-$KERNEL_BRANCH-KSU.zip"
 else
-  ZIP_NAME="$KERNEL_NAME-NonKSU.zip"
+  ZIP_NAME="$KERNEL_NAME-$KERNEL_VERSION-$KERNEL_BRANCH-NonKSU.zip"
 fi
-TIME=$(TZ='Europe/Berlin' date +"%Y-%m-%d %H:%M:%S")
+TIME=$(TZ='Europe/Berlin' date +"%d-%m-%Y %H:%M:%S")
 find ./ * -exec touch -m -d "$TIME" {} \;
 zip -r9 $ZIP_NAME *
 cp *.zip $WORKDIR/out
