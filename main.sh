@@ -13,7 +13,7 @@ KERNELSU_REPO="tiann/KernelSU"
 KSU_ENABLED="false"
 
 # Anykernel3
-ANYKERNEL3_GIT="https://github.com/SchweGELBin/AnyKernel3_davinci.git"
+ANYKERNEL3_GIT="https://github.com/silvzr/AnyKernel3.git"
 ANYKERNEL3_BRANCH="master"
 
 # Build
