@@ -1,12 +1,10 @@
-# MilkKernel - Action
-
-**Dynamic Kernel**
+# Bootlegger - Releases
 
 **For davinci | Mi 9T / Redmi K20**
 
-**Includes KernelSU**
+**Includes KernelSU variant**
 
-Please read following **[README](https://github.com/SchweGELBin/kernel_milk_davinci/blob/master/README.md)**
+Please read following **[README](https://github.com/silvzr/bootlegger_kernel_archive/blob/master/README.md)**
 
 ## Custom Kernel
 - To build your own custom kernel, fork this repository
@@ -15,8 +13,6 @@ Please read following **[README](https://github.com/SchweGELBin/kernel_milk_davi
 - Run Action "CI Build"
 - You can choose your build options before you start (These will override the variables in main.sh)
 - The files will be available at "releases" in your repository
-- v1.x.x = PixelOS kernel (Vantom)
-- v2.x.x = SleepyKernel (perf+)
 
 ```
 # Kernel
