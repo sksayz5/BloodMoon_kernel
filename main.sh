@@ -4,8 +4,8 @@
 # ------------------------------------------------------------
 
 # Kernel
-KERNEL_NAME="MilkKernel"
-KERNEL_GIT="https://github.com/silvzr/kernel_milk_davinci_store.git"
+KERNEL_NAME="Bootlegger"
+KERNEL_GIT="https://github.com/silvzr/bootlegger_kernel_archive.git"
 KERNEL_BRANCH="pixelos-14.0"
 
 # KernelSU
@@ -69,7 +69,7 @@ KERNEL_DIR="$WORKDIR/$KERNEL_NAME"
 
 KERNELSU_SOURCE="https://github.com/$KERNELSU_REPO"
 CLANG_SOURCE="https://github.com/$CLANG_REPO"
-README="https://github.com/SchweGELBin/kernel_milk_davinci/blob/master/README.md"
+README="https://github.com/silvzr/bootlegger_kernel_archive/blob/master/README.md"
 
 if [[ ! -z "$COMMON_DEFCONFIG" ]]; then
     DEVICE_DEFCONFIG=$5
