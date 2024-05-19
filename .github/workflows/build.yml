@@ -18,11 +18,11 @@ on:
       Kernel_Git:
         required: true
         type: string
-        default: https://github.com/silvzr/kernel_milk_davinci_store.git
+        default: https://github.com/silvzr/bootlegger_kernel_archive.git
       Kernel_Branch:
         required: true
         type: string
-        default: pixelos-14.0
+        default: pos14
       Device_Defconfig:
         required: true
         type: string
