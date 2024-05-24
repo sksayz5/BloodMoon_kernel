@@ -6,7 +6,7 @@
 # Kernel
 KERNEL_NAME="Bootlegger"
 KERNEL_GIT="https://github.com/silvzr/bootlegger_kernel_archive.git"
-KERNEL_BRANCH="pixelos-14.0"
+KERNEL_BRANCH=""
 
 # KernelSU
 KERNELSU_REPO="silvzr/KernelSU"
