@@ -10,7 +10,7 @@ KERNEL_BRANCH=""
 
 # KernelSU
 KERNELSU_REPO="silvzr/KernelSU"
-KSU_ENABLED="false"
+KSU_ENABLED=""
 
 # Anykernel3
 ANYKERNEL3_GIT="https://github.com/silvzr/AnyKernel3.git"
@@ -28,9 +28,9 @@ CLANG_REPO="ZyCromerZ/Clang"
 # ------------------------------------------------------------
 
 # Input Variables
-if [[ $1 == "KSU" ]]; then
-    KSU_ENABLED="true"
-    echo "Input changed KSU_ENABLED to true"
+if [[ $1 == "kprobes" || $1 == "manual" ]]; then
+    KSU_ENABLED=$1
+    echo "Input changed KSU_ENABLED to $1"
 elif [[ $1 == "NonKSU" ]]; then
     KSU_ENABLED="false"
     echo "Input changed KSU_ENABLED to false"
@@ -132,7 +132,7 @@ TITLE=$KERNEL_NAME-$KERNEL_VERSION-$KERNEL_BRANCH
 cd $KERNEL_DIR
 
 msg "KernelSU"
-if [[ $KSU_ENABLED == "true" ]]; then
+if [[ $KSU_ENABLED == "kprobes" ]]; then
     curl -LSs "https://raw.githubusercontent.com/$KERNELSU_REPO/main/kernel/setup.sh" | bash -s main
 
     echo "CONFIG_KPROBES=y" >> $DEVICE_DEFCONFIG_FILE
@@ -143,7 +143,17 @@ if [[ $KSU_ENABLED == "true" ]]; then
     KERNELSU_VERSION=$(($KSU_GIT_VERSION + 10200))
     msg "KernelSU Version: $KERNELSU_VERSION"
     sed -i "s/^CONFIG_LOCALVERSION=.*/CONFIG_LOCALVERSION=\"-$KERNEL_BRANCH-$KERNEL_NAME-KSU\"/" $DEVICE_DEFCONFIG_FILE
-else
+elif
+   [[ $KSU_ENABLED == "manual" ]]; then
+
+    echo "CONFIG_KSU=y" >> $DEVICE_DEFCONFIG_FILE
+
+    KSU_GIT_VERSION=$(cd $KERNEL_DIR/drivers/kernelsu && git rev-list --count HEAD)
+    KERNELSU_VERSION=$(($KSU_GIT_VERSION + 10200))
+    msg "KernelSU Version: $KERNELSU_VERSION"
+    sed -i "s/^CONFIG_LOCALVERSION=.*/CONFIG_LOCALVERSION=\"-$KERNEL_BRANCH-$KERNEL_NAME-KSU\"/" $DEVICE_DEFCONFIG_FILE
+fi
+if [[ $KSU_ENABLED == "false" ]]; then
     echo "KernelSU Disabled"
     KERNELSU_VERSION="Disabled"
     sed -i "s/^CONFIG_LOCALVERSION=.*/CONFIG_LOCALVERSION=\"-$KERNEL_BRANCH-$KERNEL_NAME\"/" $DEVICE_DEFCONFIG_FILE

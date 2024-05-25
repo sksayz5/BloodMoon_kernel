@@ -4,9 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       Build_KSU:
-        required: true
-        type: boolean
-        default: true
+        required: false
+        type: choice
+        options:
+        - kprobes
+        - manual
+        - ''
       Build_NonKSU:
         required: true
         type: boolean
@@ -41,10 +44,10 @@ on:
 
 jobs:    
   build-ksu:
-    if: ${{ inputs.Build_KSU }}
+    if: ${{ inputs.Build_KSU != '' }}
     uses: ./.github/workflows/build-kernel.yml
     with:
-      include_ksu: "KSU"
+      include_ksu: ${{ inputs.Build_KSU }}
       kernel_git: ${{ inputs.Kernel_Git }}
       kernel_branch: ${{ inputs.Kernel_Branch }}
       anykernel3_git: ${{ inputs.AnyKernel3_Git }}
