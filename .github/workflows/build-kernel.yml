@@ -38,6 +38,12 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Resize swap
+        uses: actionhippie/swap-space@v1.0.2
+        with:
+          size: 16G
+
       - name: Environment
         id: env
         run: |
