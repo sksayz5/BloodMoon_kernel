@@ -9,7 +9,7 @@ KERNEL_GIT="https://github.com/silvzr/bootlegger_kernel_archive.git"
 KERNEL_BRANCH=""
 
 # KernelSU
-KERNELSU_REPO="silvzr/KernelSU"
+KERNELSU_REPO="tiann/KernelSU"
 KSU_ENABLED="false"
 
 # Anykernel3
