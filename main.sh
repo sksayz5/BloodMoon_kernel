@@ -6,7 +6,7 @@
 # Kernel
 KERNEL_NAME="BloodMoon"
 KERNEL_GIT="https://github.com/sksayz5/kernel_realme_sdm710.git"
-KERNEL_BRANCH="susfs-test"
+KERNEL_BRANCH="14-ksu"
 
 # KernelSU
 KERNELSU_REPO="tiann/KernelSU"
