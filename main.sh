@@ -23,7 +23,7 @@ COMMON_DEFCONFIG=""
 DEVICE_ARCH="arch/arm64"
 
 # Clang
-CLANG_REPO="proton/Clang"
+CLANG_REPO="kdrag0n/proton-clang"
 CLANG_VERSION="latest"
 
 # ------------------------------------------------------------
