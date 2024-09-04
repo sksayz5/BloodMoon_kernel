@@ -18,7 +18,7 @@ on:
       Kernel_Branch:
         required: true
         type: string
-        default: susfs-test
+        default: 14-ksu
       AnyKernel3_Git:
         required: true
         type: string
