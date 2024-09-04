@@ -22,7 +22,9 @@ DEVICE_DEFCONFIG="sdm670-perf_defconfig"
 COMMON_DEFCONFIG=""
 DEVICE_ARCH="arch/arm64"
 
-
+# Clang
+CLANG_REPO="kdrag0n/proton-clang"
+CLANG_VERSION="latest"
 
 # ------------------------------------------------------------
 
@@ -80,7 +82,7 @@ KERNEL_SOURCE="${KERNEL_REPO::-1}/tree/$KERNEL_BRANCH"
 KERNEL_DIR="$WORKDIR/$KERNEL_NAME"
 
 KERNELSU_SOURCE="https://github.com/$KERNELSU_REPO"
-CLANG_SOURCE="https://github.com/kdrag0n/proton-clang.git -b master"
+CLANG_SOURCE="https://github.com/$CLANG_REPO"
 README="https://github.com/silvzr/bootlegger_kernel_archive/blob/master/README.md"
 
 if [[ ! -z "$COMMON_DEFCONFIG" ]]; then
