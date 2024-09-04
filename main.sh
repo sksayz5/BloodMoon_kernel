@@ -4,26 +4,26 @@
 # ------------------------------------------------------------
 
 # Kernel
-KERNEL_NAME="Bootlegger"
-KERNEL_GIT="https://github.com/silvzr/bootlegger_kernel_archive.git"
-KERNEL_BRANCH=""
+KERNEL_NAME="BloodMoon"
+KERNEL_GIT="https://github.com/sksayz5/kernel_realme_sdm710.git"
+KERNEL_BRANCH="susfs-test"
 
 # KernelSU
 KERNELSU_REPO="tiann/KernelSU"
-KSU_ENABLED="false"
+KSU_ENABLED="true"
 
 # Anykernel3
-ANYKERNEL3_GIT="https://github.com/silvzr/AnyKernel3.git"
+ANYKERNEL3_GIT="https://github.com/shravansayz/AnyKernel3.git"
 ANYKERNEL3_BRANCH="master"
 
 # Build
-DEVICE_CODE="davinci"
-DEVICE_DEFCONFIG="davinci_defconfig"
+DEVICE_CODE="RMX1901"
+DEVICE_DEFCONFIG="sdm670-perf_defconfig"
 COMMON_DEFCONFIG=""
 DEVICE_ARCH="arch/arm64"
 
 # Clang
-CLANG_REPO="ZyCromerZ/Clang"
+CLANG_REPO="proton/Clang"
 CLANG_VERSION="latest"
 
 # ------------------------------------------------------------
