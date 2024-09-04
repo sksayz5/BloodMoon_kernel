@@ -22,8 +22,7 @@ DEVICE_DEFCONFIG="sdm670-perf_defconfig"
 COMMON_DEFCONFIG=""
 DEVICE_ARCH="arch/arm64"
 
-# Clang
-CLANG_REPO="kdrag0n/proton-clang"
+
 
 # ------------------------------------------------------------
 
@@ -77,7 +76,6 @@ KERNEL_SOURCE="${KERNEL_REPO::-1}/tree/$KERNEL_BRANCH"
 KERNEL_DIR="$WORKDIR/$KERNEL_NAME"
 
 KERNELSU_SOURCE="https://github.com/$KERNELSU_REPO"
-CLANG_SOURCE="https://github.com/$CLANG_REPO"
 README="https://github.com/silvzr/bootlegger_kernel_archive/blob/master/README.md"
 
 if [[ ! -z "$COMMON_DEFCONFIG" ]]; then
@@ -102,18 +100,8 @@ msg() {
 
 cd $WORKDIR
 
-# Setup
-msg "Setup"
-
 msg "Clang"
-mkdir -p Clang
-aria2c -s16 -x16 -k1M $CLANG_DLINK -o Clang.tar.gz
-tar -C Clang/ -zxvf Clang.tar.gz
-rm -rf Clang.tar.gz
-
-CLANG_VERSION="$($CLANG_DIR/clang --version | head -n 1 | cut -f1 -d "(" | sed 's/.$//')"
-CLANG_VERSION=${CLANG_VERSION::-3} # May get removed later
-LLD_VERSION="$($CLANG_DIR/ld.lld --version | head -n 1 | cut -f1 -d "(" | sed 's/.$//')"
+git clone --depth=1 https://github.com/kdrag0n/proton-clang.git -b master
 
 msg "Kernel"
 git clone --depth=1 $KERNEL_GIT -b $KERNEL_BRANCH $KERNEL_DIR
