@@ -78,7 +78,7 @@ KERNEL_DIR="$WORKDIR/$KERNEL_NAME"
 
 KERNELSU_SOURCE="https://github.com/$KERNELSU_REPO"
 CLANG_SOURCE="https://github.com/$CLANG_REPO"
-README="https://github.com/silvzr/bootlegger_kernel_archive/blob/master/README.md"
+README="https://github.com/sksayz5/BloodMoon_kernel_archive/blob/master/README.md"
 
 if [[ ! -z "$COMMON_DEFCONFIG" ]]; then
     DEVICE_DEFCONFIG=$7
@@ -102,8 +102,17 @@ msg() {
 
 cd $WORKDIR
 
-msg "Clang"
-git clone --depth=1 https://github.com/kdrag0n/proton-clang.git -b master
+# Setup
+msg "Setup"
+
+msg "proton clang"
+
+git clone --depth=1 $CLANG_SOURCE Clang
+
+
+CLANG_VERSION="$($CLANG_DIR/clang --version | head -n 1 | cut -f1 -d "(" | sed 's/.$//')"
+CLANG_VERSION=${CLANG_VERSION::-3} # May get removed later
+LLD_VERSION="$($CLANG_DIR/ld.lld --version | head -n 1 | cut -f1 -d "(" | sed 's/.$//')"
 
 msg "Kernel"
 git clone --depth=1 $KERNEL_GIT -b $KERNEL_BRANCH $KERNEL_DIR
