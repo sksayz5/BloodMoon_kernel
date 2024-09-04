@@ -24,7 +24,6 @@ DEVICE_ARCH="arch/arm64"
 
 # Clang
 CLANG_REPO="kdrag0n/proton-clang"
-CLANG_VERSION="latest"
 
 # ------------------------------------------------------------
 
@@ -70,11 +69,7 @@ fi
 # Set variables
 WORKDIR="$(pwd)"
 
-if [[ $CLANG_VERSION == "latest" ]]; then
-    CLANG_DLINK="$(curl -s https://api.github.com/repos/$CLANG_REPO/releases/latest | grep -wo "https.*" | grep Clang-.*.tar.gz | sed 's/.$//')"
-else 
-    CLANG_DLINK="$(curl -s https://api.github.com/repos/$CLANG_REPO/releases/tags/$CLANG_VERSION | grep -wo "https.*" | grep Clang-.*.tar.gz | sed 's/.$//')"
-fi
+
 CLANG_DIR="$WORKDIR/Clang/bin"
 
 KERNEL_REPO="${KERNEL_GIT::-4}/"
