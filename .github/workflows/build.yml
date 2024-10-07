@@ -14,15 +14,15 @@ on:
       Kernel_Git:
         required: true
         type: string
-        default: https://github.com/sksayz5/kernel_realme_sdm710.git
+        default: https://github.com/user-why-red/android_kernel_realme_sdm710_49.git
       Kernel_Branch:
         required: true
         type: string
-        default: 14-ksu
+        default: stable-release
       AnyKernel3_Git:
         required: true
         type: string
-        default: https://github.com/shravansayz/AnyKernel3.git
+        default: https://github.com/sksayz5/AnyKernel3.git -b test
       Device_Code:
         required: true
         type: string
