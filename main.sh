@@ -4,17 +4,17 @@
 # ------------------------------------------------------------
 
 # Kernel
-KERNEL_NAME="BloodMoon"
-KERNEL_GIT="https://github.com/sksayz5/kernel_realme_sdm710.git"
-KERNEL_BRANCH="14-ksu"
+KERNEL_NAME="San-Kernel"
+KERNEL_GIT="https://github.com/user-why-red/android_kernel_realme_sdm710_49.git"
+KERNEL_BRANCH="stable-release"
 
 # KernelSU
 KERNELSU_REPO="tiann/KernelSU"
 KSU_ENABLED="true"
 
 # Anykernel3
-ANYKERNEL3_GIT="https://github.com/shravansayz/AnyKernel3.git"
-ANYKERNEL3_BRANCH="master"
+ANYKERNEL3_GIT="https://github.com/sksayz5/AnyKernel3.git"
+ANYKERNEL3_BRANCH="test"
 
 # Build
 DEVICE_CODE="RMX1901"
